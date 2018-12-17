@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		 
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				 <div class="row">
+				 <div class="col-md-3">
+				 	<button class="btn btn-default" id="btnDivStyle">Get Div Class</button>
+				 	<button class="btn btn-warning" id="btnPStyle">Get P Style</button>
+				 </div>
+				 	<div class="col-md-3">
+				 			<h4>This is div.</h4>
+				 	</div>
+				 		<div class="col-md-4" id="div1">
+				 			<p style="font-size:16px;font-weight:bold">
+								This is paragraph.
+							</p>
+				 		</div>				
+				</div>
+				 
+			</div>
+			<hr>
+			<div class="jumbotron">
+				 <div class="row">
+				 <div class="col-md-3">
+				 	<button class="btn btn-default" id="btnDiv">Get div html</button>
+				 	 
+				 </div>
+				 	<div class="col-md-3">
+				 			<h4>This is div.</h4>
+				 	</div>
+				 		<div class="col-md-4" id="myDiv">
+				 			<div   class="yellowDiv">
+								<p style="font-size:16px;font-weight:bold">
+									This is paragraph.
+								</p>
+							</div>
+							<div id="emptyDiv">
+							</div>
+				 		</div>				
+				</div>
+				 
+			</div>
+			<hr>
+			<h2>Manipulate DOM Element's Dimensions using jQuery</h2>
+			<div class="jumbotron">
+				 <div class="row">
+				  <div class="col-md-4">
+				  	<button class="btn btn-default" id="btnDivWidth">Get div width</button>
+					<button class="btn btn-default" id="btnPWidth">Get p width</button>
+				  </div>
+				  <div class="col-md-4">
+				  	<div id="myDiv">
+							This is div.
+						</div>
+						<p>
+							This is paragraph.
+						</p>
+				  </div>				
+				</div>
+				 <hr>
+				 <div class="row">
+				  <div class="col-md-4">
+				  	<button class="btn btn-default" id="btnDivOffset">Get div width</button>
+					<button class="btn btn-default" id="btnPOffset">Get p width</button>
+				  </div>
+				  <div class="col-md-4">
+				  	<div id="myDiv1">
+							This is div.
+						</div>
+						<p id="place">
+							This is paragraph.
+						</p>
+				  </div>				
+				</div>
+			</div>
+		</div>
+	</div>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+    	 
+    	$(document).ready(function(){
+    			 	$('#btnDivStyle').click(function(){
+				alert($('#div1').attr('class'));
+			});
+                
+			$('#btnPStyle').click(function(){
+				alert($('p').attr('style'));
+			});
+				// html() Method
+					$('#btnDiv').click(function(){
+				alert($('#myDiv').html()); //returns innerHtml of #myDiv
+			});
+                
+			//add <p>This is another paragraph.</p> to #emptyDiv
+			$('#emptyDiv').html('<p style="color:#c7c7c7;text-decoration:underline">This is another paragraph.</p>');
+
+			});
+
+    	// Manipulation of DOM Element's
+    	$('#btnDivWidth').click(function(){
+				alert($('#myDiv').width()); //returns width of #myDiv in pixels
+			});
+
+			$('#btnPWidth').click(function(){
+				alert($('p').width()); //returns width of first p in pixelx
+			});
+
+			//set width
+			$('#myDiv').width(100);
+
+			// The jQuery offset() method gets or sets coordinates of the specified element(s).
+			$('#btnDivOffset').click(function(){
+				var ofs = $('#myDiv1').offset();
+				
+				alert('left:' + ofs.left + ', top: ' + ofs.top);
+			});
+
+			$('#btnPOffset').click(function(){
+				var ofs = $('#place').offset();
+				
+				alert('left:' + ofs.left + ', top: ' + ofs.top);
+			});
+
+			//set offset
+			$('#place').offset({ left:50, top:200});
+    </script>
+</body>
+</html>

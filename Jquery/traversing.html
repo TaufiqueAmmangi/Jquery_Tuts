@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		 
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				 <div class="row">
+				  			<button id="btnShow" class="btn btn-default">Show p elements</button>
+							<div>
+								<p>This is First paragraph.</p>
+							</div>
+							<div id="myDiv">
+								<p>
+									This is second paragraph.
+								</p>
+								<div id="inrDiv">
+									<p>This is third paragraph.</p>
+								</div>
+								<div>
+									<ul class="list-inline">
+										<li class="success">First</li>
+										<li>Second</li>
+										<li>Third</li>
+									</ul>
+								</div>
+							</div>
+							<div>
+								<p>This is fourth paragraph.</p>
+							</div>
+				</div>
+				<hr>
+				<div class="row">
+					<h3>Demo: jQuery children() method</h3>
+						<button id="btnShow1" class="btn btn-default">Show child elements</button>
+						<div>
+							<p>This is First paragraph.</p>
+						</div>
+						<div id="myDiv1">
+							<p>
+								This is second paragraph.
+							</p>
+							<div id="inrDiv">
+								<p>This is third paragraph.</p>
+							</div>
+							<div>
+								<ul>
+									<li>First</li>
+									<li>Second</li>
+									<li>Third</li>
+								</ul>
+							</div>
+								<div>
+							<p>This is fourth paragraph.</p>
+						</div>
+						</div>
+					
+				</div>
+				 
+			</div>
+			<hr> 
+		</div>
+	</div>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+    	 
+    	$(document).ready(function(){
+    		$('#btnShow').click(function(){
+				
+				$('#myDiv p').each(function (index) {
+					alert('index: ' + index + ', text: ' + $(this).text());
+				});
+
+			});		
+
+			$('#btnShow1').click(function(){
+				
+				$('#myDiv1').children().each(function (index) {
+					alert('Index: ' + index + ', html: ' + $(this).html());
+				});
+
+			}); 	 
+    	});
+    </script>
+</body>
+</html>

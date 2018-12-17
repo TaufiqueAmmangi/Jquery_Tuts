@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<style type="text/css">
+		  .yellowDiv{
+				background-color:yellow;
+				margin: 10px 0 0 0;
+				height:100px;
+				width: 100px;
+		    }
+		    .redDiv{
+				background-color:red;
+				margin: 10px 0 0 0;
+				height:100px;
+				width: 100px;
+				position: fixed;
+			    top: 45%;
+			    left: 20%;
+		    }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				 <div class="row">
+				 <h1>Demo: jQuery css() method</h1>
+				<button id="btnShow" class="btn btn-default">Show div style</button>
+				
+				<div id="myDiv">
+					<p>
+						This is first paragraph.
+					</p>
+				</div>
+				<div>
+						<p>This is second paragraph.</p>
+					</div>
+				<div >
+					<p>This is third paragraph.</p>
+				</div>			
+				</div>
+				 <div class="row">
+				 		<h3>Demo: jQuery toggleClass() method</h3>
+				 	<button id="btnToggleDivClass" class="btn btn-default">Toggle div class</button>
+				 	<div id="myDiv" class="yellowDiv" >
+						</div>
+				 </div>	
+			</div>
+
+		</div>
+	</div>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+    	 
+    	$(document).ready(function(){ 
+    		//
+					$('#btnShow').click(function(){
+					$('p').css({'font-size':'16px','font-weight':'bold'});
+					$('#myDiv').css('background-color','blue');
+					alert($('#myDiv').css('background-color'));				
+
+				});
+						$('#btnToggleDivClass').click(function(){
+							$('#myDiv').toggleClass('redDiv');
+
+						});
+    	});
+    </script>
+</body>
+</html>

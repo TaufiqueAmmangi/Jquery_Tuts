@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h3>Hi</h3>
+				<br>
+				<p>First Para</p>
+				<p>Second Para</p>
+				<!--  Select Elements by Attribute -->
+				<div id="myDiv1" class="yellowDiv"></div>
+				<div id="myDiv2" class="fof"></div>
+				<hr>
+				<div class="col-md-2">
+					<input name="man-news" class="form-control">
+
+				</div>
+				<div class="col-md-2"><input name="man" class="form-control"></div>
+			</div>
+		</div>
+	</div>
+	 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		
+            $('p').append('This is paragraph.'); // appends text to all p elements
+
+           // Select Elements by Attribute
+           // jQuery also allows you to find an element based on attributes set on it. Specifing an attribute name in square 	brackets in $ function e.g. $('[class]') will return all the elements that have class attribute irrespective of value.
+
+            $('[id]').append('This element has class attribute');
+            $('[class="fof"]').append('Select Element by Attribute Value');
+            $( "input[name='man-news']" ).val( "has man in it!" );
+    	});
+    </script>
+</body>
+</html>
